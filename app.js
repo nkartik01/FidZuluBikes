@@ -3,6 +3,9 @@ var path = require("path");
 const app = express();
 
 const indexRoute = require("./routes/index");
+var cors = require("cors");
+
+app.use(cors());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
