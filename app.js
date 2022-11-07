@@ -1,7 +1,11 @@
 const express = require("express");
+var path = require("path");
 const app = express();
 
 const indexRoute = require("./routes/index");
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "jade");
+
 app.use("/", indexRoute);
 
 const PORT = 3031;
